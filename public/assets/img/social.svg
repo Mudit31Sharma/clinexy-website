@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Social media for clinics">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EEF4FF"/><stop offset="1" stop-color="#E3EDFF"/></linearGradient>
+<linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E7BF0"/><stop offset="1" stop-color="#1B4FB0"/></linearGradient>
+<linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34C883"/><stop offset="1" stop-color="#1E9C63"/></linearGradient>
+<linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F6AE1" stop-opacity="0.28"/><stop offset="1" stop-color="#1F6AE1" stop-opacity="0"/></linearGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#1F3A6B" flood-opacity="0.16"/></filter>
+<filter id="sh2" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1F3A6B" flood-opacity="0.18"/></filter>
+</defs>
+<style>
+text{font-family:Inter,Segoe UI,system-ui,sans-serif}
+.flt{animation:flt 5s ease-in-out infinite}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.flt2{animation:flt 6s ease-in-out infinite;animation-delay:-2s}
+.pulse{animation:pl 2.4s ease-in-out infinite}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.12)}}
+.fadeup{opacity:0;animation:fu .8s ease forwards}
+@keyframes fu{to{opacity:1;transform:translateY(0)}}
+.draw{stroke-dasharray:1400;stroke-dashoffset:1400;animation:dr 2.6s ease forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.grow{transform:scaleY(0);transform-origin:bottom;animation:gr 1.4s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes gr{to{transform:scaleY(1)}}
+.spin{transform-origin:center;animation:sp 1.4s ease forwards}
+@keyframes sp{0%{opacity:0;transform:scale(.4) rotate(-25deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+.ring{stroke-dasharray:540;stroke-dashoffset:540;animation:dr 1.8s ease forwards}
+.blink{animation:bl 1.3s steps(1) infinite}
+@keyframes bl{50%{opacity:.25}}
+.sweep{animation:sw 3.2s ease-in-out infinite}
+@keyframes sw{0%{transform:translateX(-160px);opacity:0}30%{opacity:.5}60%{opacity:0}100%{transform:translateX(420px);opacity:0}}
+.rise{animation:ri 3s ease-in-out infinite}
+@keyframes ri{0%{opacity:0;transform:translateY(16px) scale(.9)}40%{opacity:1}100%{opacity:0;transform:translateY(-34px) scale(1.1)}}
+</style><rect width="600" height="450" fill="url(#bg)"/>
+<g class="flt2"><rect x="70" y="50" width="300" height="360" rx="20" fill="#fff" filter="url(#sh)"/></g>
+<rect x="70" y="50" width="300" height="54" rx="20" fill="#fff"/><circle cx="100" cy="80" r="16" fill="url(#blue)"/><text x="124" y="78" font-size="13" font-weight="700" fill="#1F2937">drsharma.skin</text><text x="124" y="94" font-size="11" fill="#64748B">12.4k followers</text>
+<g class="fadeup" style="animation-delay:.2s;transform:translateY(14px)"><rect x="90" y="118" width="260" height="120" rx="12" fill="#EAF1FF"/><circle cx="120" cy="148" r="10" fill="#1F6AE1"/><rect x="138" y="142" width="120" height="10" rx="5" fill="#9DBDF0"/><rect x="106" y="176" width="228" height="12" rx="6" fill="#C9DBF7"/><rect x="106" y="198" width="180" height="12" rx="6" fill="#DCE7F8"/><text x="106" y="228" font-size="12" fill="#1F6AE1">♥ 312   💬 24   ↗ 18</text></g>
+<g class="fadeup" style="animation-delay:.5s;transform:translateY(14px)"><rect x="90" y="250" width="260" height="120" rx="12" fill="#E8F7EF"/><circle cx="120" cy="280" r="10" fill="#2BB673"/><rect x="138" y="274" width="120" height="10" rx="5" fill="#9BE0BD"/><rect x="106" y="308" width="228" height="12" rx="6" fill="#BDEBD2"/><rect x="106" y="330" width="170" height="12" rx="6" fill="#D6F2E2"/><text x="106" y="360" font-size="12" fill="#1E9C63">♥ 487   💬 41   ↗ 33</text></g>
+<g class="rise"><text x="430" y="320" font-size="26" fill="#EF4d6a">♥</text></g>
+<g class="rise" style="animation-delay:1s"><text x="466" y="300" font-size="20" fill="#EF4d6a">♥</text></g>
+<g class="rise" style="animation-delay:2s"><text x="410" y="300" font-size="18" fill="#EF4d6a">♥</text></g>
+<g class="flt"><rect x="392" y="120" width="128" height="84" rx="16" fill="#fff" filter="url(#sh2)"/><text x="456" y="150" font-size="12" fill="#64748B" text-anchor="middle">Engagement</text><text x="456" y="182" font-size="24" font-weight="800" fill="#1F2937" text-anchor="middle">+58%</text></g>
+<g class="flt2"><rect x="404" y="226" width="116" height="64" rx="14" fill="url(#green)" filter="url(#sh2)"/><text x="462" y="252" font-size="11" fill="#DDF6E8" text-anchor="middle">Posts done</text><text x="462" y="276" font-size="18" font-weight="800" fill="#fff" text-anchor="middle">for you</text></g>
+</svg>

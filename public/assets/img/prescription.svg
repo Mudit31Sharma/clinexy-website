@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Digital prescription">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EEF4FF"/><stop offset="1" stop-color="#E3EDFF"/></linearGradient>
+<linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E7BF0"/><stop offset="1" stop-color="#1B4FB0"/></linearGradient>
+<linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34C883"/><stop offset="1" stop-color="#1E9C63"/></linearGradient>
+<linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F6AE1" stop-opacity="0.28"/><stop offset="1" stop-color="#1F6AE1" stop-opacity="0"/></linearGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#1F3A6B" flood-opacity="0.16"/></filter>
+<filter id="sh2" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1F3A6B" flood-opacity="0.18"/></filter>
+</defs>
+<style>
+text{font-family:Inter,Segoe UI,system-ui,sans-serif}
+.flt{animation:flt 5s ease-in-out infinite}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.flt2{animation:flt 6s ease-in-out infinite;animation-delay:-2s}
+.pulse{animation:pl 2.4s ease-in-out infinite}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.12)}}
+.fadeup{opacity:0;animation:fu .8s ease forwards}
+@keyframes fu{to{opacity:1;transform:translateY(0)}}
+.draw{stroke-dasharray:1400;stroke-dashoffset:1400;animation:dr 2.6s ease forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.grow{transform:scaleY(0);transform-origin:bottom;animation:gr 1.4s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes gr{to{transform:scaleY(1)}}
+.spin{transform-origin:center;animation:sp 1.4s ease forwards}
+@keyframes sp{0%{opacity:0;transform:scale(.4) rotate(-25deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+.ring{stroke-dasharray:540;stroke-dashoffset:540;animation:dr 1.8s ease forwards}
+.blink{animation:bl 1.3s steps(1) infinite}
+@keyframes bl{50%{opacity:.25}}
+.sweep{animation:sw 3.2s ease-in-out infinite}
+@keyframes sw{0%{transform:translateX(-160px);opacity:0}30%{opacity:.5}60%{opacity:0}100%{transform:translateX(420px);opacity:0}}
+.rise{animation:ri 3s ease-in-out infinite}
+@keyframes ri{0%{opacity:0;transform:translateY(16px) scale(.9)}40%{opacity:1}100%{opacity:0;transform:translateY(-34px) scale(1.1)}}
+</style><rect width="600" height="450" fill="url(#bg)"/>
+<g class="flt2"><rect x="150" y="46" width="300" height="360" rx="18" fill="#fff" filter="url(#sh)"/></g>
+<rect x="150" y="46" width="300" height="60" rx="18" fill="url(#blue)"/><rect x="150" y="86" width="300" height="20" fill="#1B4FB0"/>
+<text x="176" y="84" font-size="26" font-weight="800" fill="#fff">℞</text><text x="210" y="84" font-size="15" font-weight="700" fill="#fff">Prescription</text>
+<text x="176" y="138" font-size="12" fill="#64748B">Patient: Meera K.</text><text x="176" y="158" font-size="12" fill="#64748B">Date: Today</text>
+<line x1="176" y1="180" x2="424" y2="180" stroke="#E5E9F0" stroke-width="2" class="draw"/>
+<g class="fadeup" style="animation-delay:.4s;transform:translateY(8px)"><circle cx="184" cy="208" r="6" fill="#1F6AE1"/><text x="202" y="213" font-size="13" fill="#1F2937">Amoxicillin 500mg — 1 tab x3/day</text></g>
+<g class="fadeup" style="animation-delay:.7s;transform:translateY(8px)"><circle cx="184" cy="240" r="6" fill="#1F6AE1"/><text x="202" y="245" font-size="13" fill="#1F2937">Paracetamol 650mg — as needed</text></g>
+<g class="fadeup" style="animation-delay:1s;transform:translateY(8px)"><circle cx="184" cy="272" r="6" fill="#1F6AE1"/><text x="202" y="277" font-size="13" fill="#1F2937">Rest, fluids, review in 5 days</text></g>
+<path d="M180 318 q18 -22 36 0 t36 0" fill="none" stroke="#1F6AE1" stroke-width="3" stroke-linecap="round" class="draw"/><text x="180" y="350" font-size="11" fill="#64748B">Dr. A. Sharma · e-signed</text>
+<g class="flt"><circle cx="430" cy="120" r="30" fill="url(#green)" filter="url(#sh2)"/><path d="M416 120 l9 9 l17 -18" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g class="flt2"><g transform="translate(120,300)"><rect x="0" y="0" width="52" height="26" rx="13" fill="#fff" stroke="#E5E9F0"/><rect x="0" y="0" width="26" height="26" rx="13" fill="#2BB673"/></g></g>
+</svg>

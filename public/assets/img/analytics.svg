@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Practice analytics">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EEF4FF"/><stop offset="1" stop-color="#E3EDFF"/></linearGradient>
+<linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E7BF0"/><stop offset="1" stop-color="#1B4FB0"/></linearGradient>
+<linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34C883"/><stop offset="1" stop-color="#1E9C63"/></linearGradient>
+<linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F6AE1" stop-opacity="0.28"/><stop offset="1" stop-color="#1F6AE1" stop-opacity="0"/></linearGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#1F3A6B" flood-opacity="0.16"/></filter>
+<filter id="sh2" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1F3A6B" flood-opacity="0.18"/></filter>
+</defs>
+<style>
+text{font-family:Inter,Segoe UI,system-ui,sans-serif}
+.flt{animation:flt 5s ease-in-out infinite}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.flt2{animation:flt 6s ease-in-out infinite;animation-delay:-2s}
+.pulse{animation:pl 2.4s ease-in-out infinite}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.12)}}
+.fadeup{opacity:0;animation:fu .8s ease forwards}
+@keyframes fu{to{opacity:1;transform:translateY(0)}}
+.draw{stroke-dasharray:1400;stroke-dashoffset:1400;animation:dr 2.6s ease forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.grow{transform:scaleY(0);transform-origin:bottom;animation:gr 1.4s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes gr{to{transform:scaleY(1)}}
+.spin{transform-origin:center;animation:sp 1.4s ease forwards}
+@keyframes sp{0%{opacity:0;transform:scale(.4) rotate(-25deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+.ring{stroke-dasharray:540;stroke-dashoffset:540;animation:dr 1.8s ease forwards}
+.blink{animation:bl 1.3s steps(1) infinite}
+@keyframes bl{50%{opacity:.25}}
+.sweep{animation:sw 3.2s ease-in-out infinite}
+@keyframes sw{0%{transform:translateX(-160px);opacity:0}30%{opacity:.5}60%{opacity:0}100%{transform:translateX(420px);opacity:0}}
+.rise{animation:ri 3s ease-in-out infinite}
+@keyframes ri{0%{opacity:0;transform:translateY(16px) scale(.9)}40%{opacity:1}100%{opacity:0;transform:translateY(-34px) scale(1.1)}}
+</style><rect width="600" height="450" fill="url(#bg)"/>
+<g class="flt2"><rect x="60" y="50" width="480" height="350" rx="20" fill="#fff" filter="url(#sh)"/></g>
+<text x="88" y="92" font-size="16" font-weight="800" fill="#1F2937">Where your patients come from</text>
+<rect x="104" y="260" width="34" height="70" rx="6" fill="url(#blue)" class="grow" style="animation-delay:0.00s"/><rect x="164" y="226" width="34" height="104" rx="6" fill="url(#blue)" class="grow" style="animation-delay:0.12s"/><rect x="224" y="244" width="34" height="86" rx="6" fill="url(#blue)" class="grow" style="animation-delay:0.24s"/><rect x="284" y="202" width="34" height="128" rx="6" fill="url(#blue)" class="grow" style="animation-delay:0.36s"/><rect x="344" y="180" width="34" height="150" rx="6" fill="url(#blue)" class="grow" style="animation-delay:0.48s"/><rect x="404" y="160" width="34" height="170" rx="6" fill="url(#blue)" class="grow" style="animation-delay:0.60s"/>
+<line x1="96" y1="330" x2="470" y2="330" stroke="#E5E9F0" stroke-width="2"/>
+<text x="104" y="350" font-size="10" fill="#64748B">SEO</text><text x="166" y="350" font-size="10" fill="#64748B">GBP</text><text x="222" y="350" font-size="10" fill="#64748B">Social</text><text x="286" y="350" font-size="10" fill="#64748B">Reviews</text><text x="350" y="350" font-size="10" fill="#64748B">Referral</text><text x="412" y="350" font-size="10" fill="#64748B">Direct</text>
+<g class="flt"><circle cx="478" cy="150" r="52" fill="none" stroke="#E5E9F0" stroke-width="16"/><circle cx="478" cy="150" r="52" fill="none" stroke="url(#green)" stroke-width="16" stroke-linecap="round" stroke-dasharray="327" stroke-dashoffset="120" transform="rotate(-90 478 150)" class="ring"/><text x="478" y="146" font-size="20" font-weight="800" fill="#1F2937" text-anchor="middle">64%</text><text x="478" y="166" font-size="9" fill="#64748B" text-anchor="middle">online</text></g>
+<g class="flt2"><rect x="372" y="360" width="160" height="34" rx="17" fill="#EAF1FF"/><text x="452" y="382" font-size="12" font-weight="700" fill="#1F6AE1" text-anchor="middle">▲ 32% vs last month</text></g>
+</svg>

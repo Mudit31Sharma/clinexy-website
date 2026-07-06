@@ -21,7 +21,11 @@ export default function Footer() {
             <Logo />
           </div>
           <p className="footer-tagline">Manage appointments. Reduce no-shows. Grow your practice.</p>
-          <p className="footer-contact">hello@clinexy.com</p>
+          <p className="footer-contact">hello@clinexy.com · +91 94126 25716</p>
+          <p className="footer-social">
+            <a href="https://www.linkedin.com/company/clinexy/">LinkedIn</a> ·{' '}
+            <a href="https://www.facebook.com/clinexyapp">Facebook</a>
+          </p>
         </div>
 
         <div className="footer-cols">

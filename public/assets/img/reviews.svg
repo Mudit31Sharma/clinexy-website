@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" role="img" aria-label="5 star reviews">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EEF4FF"/><stop offset="1" stop-color="#E3EDFF"/></linearGradient>
+<linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E7BF0"/><stop offset="1" stop-color="#1B4FB0"/></linearGradient>
+<linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34C883"/><stop offset="1" stop-color="#1E9C63"/></linearGradient>
+<linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F6AE1" stop-opacity="0.28"/><stop offset="1" stop-color="#1F6AE1" stop-opacity="0"/></linearGradient>
+<filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#1F3A6B" flood-opacity="0.16"/></filter>
+<filter id="sh2" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1F3A6B" flood-opacity="0.18"/></filter>
+</defs>
+<style>
+text{font-family:Inter,Segoe UI,system-ui,sans-serif}
+.flt{animation:flt 5s ease-in-out infinite}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.flt2{animation:flt 6s ease-in-out infinite;animation-delay:-2s}
+.pulse{animation:pl 2.4s ease-in-out infinite}
+@keyframes pl{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:1;transform:scale(1.12)}}
+.fadeup{opacity:0;animation:fu .8s ease forwards}
+@keyframes fu{to{opacity:1;transform:translateY(0)}}
+.draw{stroke-dasharray:1400;stroke-dashoffset:1400;animation:dr 2.6s ease forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.grow{transform:scaleY(0);transform-origin:bottom;animation:gr 1.4s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes gr{to{transform:scaleY(1)}}
+.spin{transform-origin:center;animation:sp 1.4s ease forwards}
+@keyframes sp{0%{opacity:0;transform:scale(.4) rotate(-25deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+.ring{stroke-dasharray:540;stroke-dashoffset:540;animation:dr 1.8s ease forwards}
+.blink{animation:bl 1.3s steps(1) infinite}
+@keyframes bl{50%{opacity:.25}}
+.sweep{animation:sw 3.2s ease-in-out infinite}
+@keyframes sw{0%{transform:translateX(-160px);opacity:0}30%{opacity:.5}60%{opacity:0}100%{transform:translateX(420px);opacity:0}}
+.rise{animation:ri 3s ease-in-out infinite}
+@keyframes ri{0%{opacity:0;transform:translateY(16px) scale(.9)}40%{opacity:1}100%{opacity:0;transform:translateY(-34px) scale(1.1)}}
+</style><rect width="600" height="450" fill="url(#bg)"/>
+<g class="flt2"><rect x="70" y="60" width="320" height="160" rx="20" fill="#fff" filter="url(#sh)"/></g>
+<text x="100" y="120" font-size="58" font-weight="800" fill="#1F2937">4.9</text>
+<g transform="translate(196,96)">
+<g class="spin" style="animation-delay:.1s"><path d="M0 14 L4 4 L8 14 L18 15 L10 22 L13 32 L4 26 L-5 32 L-2 22 L-10 15 Z" fill="#F5B400"/></g>
+<g class="spin" style="animation-delay:.3s" transform="translate(34,0)"><path d="M0 14 L4 4 L8 14 L18 15 L10 22 L13 32 L4 26 L-5 32 L-2 22 L-10 15 Z" fill="#F5B400"/></g>
+<g class="spin" style="animation-delay:.5s" transform="translate(68,0)"><path d="M0 14 L4 4 L8 14 L18 15 L10 22 L13 32 L4 26 L-5 32 L-2 22 L-10 15 Z" fill="#F5B400"/></g>
+<g class="spin" style="animation-delay:.7s" transform="translate(102,0)"><path d="M0 14 L4 4 L8 14 L18 15 L10 22 L13 32 L4 26 L-5 32 L-2 22 L-10 15 Z" fill="#F5B400"/></g>
+<g class="spin" style="animation-delay:.9s" transform="translate(136,0)"><path d="M0 14 L4 4 L8 14 L18 15 L10 22 L13 32 L4 26 L-5 32 L-2 22 L-10 15 Z" fill="#F5B400"/></g>
+</g>
+<text x="196" y="170" font-size="14" fill="#64748B">based on 212 Google reviews</text>
+<g class="fadeup" style="animation-delay:.5s;transform:translateY(14px)"><rect x="70" y="246" width="460" height="70" rx="14" fill="#fff" filter="url(#sh2)"/><circle cx="104" cy="281" r="20" fill="url(#blue)"/><text x="104" y="287" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">A</text><text x="138" y="276" font-size="13" font-weight="700" fill="#1F2937">Aarti S.  ★★★★★</text><text x="138" y="298" font-size="12" fill="#64748B">"Booking was easy and the doctor was wonderful."</text></g>
+<g class="fadeup" style="animation-delay:.7s;transform:translateY(14px)"><rect x="70" y="326" width="460" height="62" rx="14" fill="#fff" filter="url(#sh2)"/><circle cx="104" cy="357" r="20" fill="url(#green)"/><text x="104" y="363" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">R</text><text x="138" y="351" font-size="13" font-weight="700" fill="#1F2937">Rahul M.  ★★★★★</text><text x="138" y="372" font-size="12" fill="#64748B">"Reminders meant I never missed an appointment."</text></g>
+<g class="flt"><rect x="404" y="70" width="120" height="40" rx="20" fill="url(#green)" filter="url(#sh2)"/><text x="464" y="95" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">+37 new</text></g>
+</svg>
