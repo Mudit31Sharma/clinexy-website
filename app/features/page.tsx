@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Features: Booking, Telehealth, Website, SEO & Reviews | Clinexy",
+  title: "Features: Booking, Telehealth, Website, SEO & Reviews",
   description:
     "Explore every Clinexy feature for solo healthcare professionals: online booking, telehealth, patient records, billing, a website builder, local SEO, reviews, and branding.",
   alternates: { canonical: "https://www.clinexy.com/features" },

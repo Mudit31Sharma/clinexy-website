@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Compliance Hub - Clinexy",
+  title: "Compliance Hub",
   description: "Clinexy compliance. HIPAA, GDPR, PIPEDA, Privacy Act, PDPA, DPDP, ABDM.",
   alternates: { canonical: "https://www.clinexy.com/compliance" },
 };

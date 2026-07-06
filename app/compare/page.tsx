@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Compare Clinexy vs SimplePractice, Cliniko, Jane & More | Clinexy",
+  title: "Compare Clinexy vs SimplePractice, Cliniko, Jane & More",
   description:
     "Honest comparisons of Clinexy against SimplePractice, Cliniko, Jane, Healthie, Practo, and MocDoc. See where each is strong and why Clinexy adds the growth layer.",
   alternates: { canonical: "https://www.clinexy.com/compare" },

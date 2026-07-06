@@ -3,9 +3,9 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "One Platform for Practice Operations & Growth | Clinexy",
+  title: "The Clinexy Platform: Run & Grow Your Practice",
   description:
-    "Clinexy is the all-in-one platform for solo healthcare professionals: booking, telehealth, records, billing, plus a website, local SEO, reviews, and branding.",
+    "See how Clinexy runs your whole solo practice and grows it: booking, telehealth, records, billing, website, local SEO, reviews, branding, and automation, in one platform.",
   alternates: { canonical: "https://www.clinexy.com/product" },
 };
 

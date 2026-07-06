@@ -3,166 +3,176 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Appointment Booking & Patient Reminders for Solo Doctors",
-  description: "Online appointment booking with automated patient reminders for solo doctors. Cut no-shows by 40%. WhatsApp, SMS, and email reminders.",
+  title: "Online Booking & Smart Reminders",
+  description: "Online booking on your branded link with a 3-touch reminder sequence that cuts no-shows by 30 to 40%. Built for solo healthcare professionals.",
   alternates: { canonical: "https://www.clinexy.com/appointment-booking-patient-reminders-for-solo-doctors" },
 };
 
-export default function AppointmentBookingPage() {
+// JSON-LD Structured Data
+const jsonLd1 = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Clinexy",
+  "url": "https://www.clinexy.com/",
+  "logo": "https://www.clinexy.com/assets/img/logo.svg",
+  "description": "All-in-one patient growth and practice management platform for solo healthcare professionals.",
+  "sameAs": [
+    "https://www.linkedin.com/company/clinexy/",
+    "https://www.facebook.com/clinexyapp"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91 94126 25716",
+      "email": "sales@clinexy.com",
+      "contactType": "customer support"
+    }
+  ]
+};
+
+const jsonLd2 = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.clinexy.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Appointment Booking Patient Reminders For Solo Doctors",
+      "item": "https://www.clinexy.com/appointment-booking-patient-reminders-for-solo-doctors"
+    }
+  ]
+};
+
+const jsonLd3 = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Online Booking & Smart Reminders included in the plan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. No add-on fees, no per-message fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does setup take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most features take 5 to 15 minutes to activate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Online Booking & Smart Reminders work for my specialty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Workflows adapt to your specialty's actual operating pattern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it compliant in my region?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. HIPAA, GDPR, PIPEDA, Privacy Act, PDPA, DPDP."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I customise it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Timing, language, content, and templates are all customisable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I integrate Online Booking & Smart Reminders with my existing tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Calendar sync, payment processors, and other major tools integrate natively."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is patient data secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. AES-256 encryption at rest. TLS 1.3 in transit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I need help setting it up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "24/7 chat support during your trial and on every paid plan."
+      }
+    }
+  ]
+};
+
+
+export default function Page() {
   return (
     <>
-      <header className="hero">
-        <div className="hero-inner" style={{ gridTemplateColumns: '1fr' }}>
-          <div className="hero-content" style={{ maxWidth: '660px' }}>
-            <span className="tag">Online Booking + Reminders</span>
-            <h1>Appointment booking and patient reminders for solo doctors</h1>
-            <p className="hero-sub">24/7 online booking on your own link. Automated 3-touch WhatsApp and SMS reminders that cut your no-show rate below 10%. Zero phone tag.</p>
-            <ul className="point-list" style={{ marginBottom: '26px' }}>
-              <li>Branded booking link on your website and WhatsApp bio</li>
-              <li>Reminders at 24 hours, 2 hours, and 30 minutes before</li>
-              <li>One-tap reschedule for patients</li>
-              <li>Automatic waitlist filling when slots open</li>
-            </ul>
-            <div className="hero-ctas">
-              <a href="https://demo.clinexy.com/portal/onboarding-request" className="btn btn-primary btn-lg" id="booking-trial">Start Free Trial</a>
-              <a href="https://demo.clinexy.com/portal/onboarding-request" className="btn btn-secondary btn-lg" id="booking-demo">Book a Demo</a>
-            </div>
-            <p className="hero-reassure">14-day free trial · No credit card required · Set up in 30 minutes</p>
-          </div>
-          <div className="hero-image">
-            <div className="hero-svg-wrap">
-              <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg" fontFamily="Inter,sans-serif" style={{ display: 'block', width: '100%' }}>
-                <rect width="460" height="320" fill="#F8FAFC"/>
-                {/* Calendar */}
-                <rect x="20" y="20" width="260" height="180" rx="10" fill="white" stroke="#E2E8F0" strokeWidth="1"/>
-                <text x="36" y="48" fontSize="12" fontWeight="700" fill="#1F2937">Your booking calendar</text>
-                <g fontSize="8" fill="#94A3B8" textAnchor="middle">
-                  {['Mon','Tue','Wed','Thu','Fri'].map((d, i) => (
-                    <text key={d} x={56 + i*46} y="68">{d}</text>
-                  ))}
-                </g>
-                {[
-                  { x: 36, y: 80, w: 40, label: '9:00', color: '#EAF0FD', text: '#1F6AE1' },
-                  { x: 82, y: 80, w: 40, label: 'Riya', color: '#E8F7EF', text: '#239E62' },
-                  { x: 174, y: 80, w: 40, label: '9:30', color: '#EAF0FD', text: '#1F6AE1' },
-                  { x: 36, y: 112, w: 40, label: 'Amit', color: '#E8F7EF', text: '#239E62' },
-                  { x: 128, y: 112, w: 40, label: '11:00', color: '#EAF0FD', text: '#1F6AE1' },
-                  { x: 220, y: 112, w: 40, label: '2:00', color: '#EAF0FD', text: '#1F6AE1' },
-                ].map((slot, i) => (
-                  <g key={i}>
-                    <rect x={slot.x} y={slot.y} width={slot.w} height={26} rx="5" fill={slot.color}/>
-                    <text x={slot.x + slot.w/2} y={slot.y + 16} fontSize="9" fill={slot.text} textAnchor="middle" fontWeight="600">{slot.label}</text>
-                  </g>
-                ))}
-                {/* WhatsApp reminders */}
-                <rect x="294" y="20" width="146" height="180" rx="10" fill="#1a2f52"/>
-                <text x="310" y="48" fontSize="11" fontWeight="700" fill="white">Reminders sent</text>
-                {[
-                  { time: '24 hrs before', status: '✓ Sent', color: '#4ade80' },
-                  { time: '2 hrs before', status: '✓ Sent', color: '#4ade80' },
-                  { time: '30 min before', status: '⏳ Pending', color: '#facc15' },
-                ].map((r, i) => (
-                  <g key={i}>
-                    <rect x="310" y={64 + i * 46} width="114" height="36" rx="6" fill="rgba(255,255,255,0.08)"/>
-                    <text x="320" y={80 + i * 46} fontSize="9" fill="rgba(255,255,255,0.7)">{r.time}</text>
-                    <text x="320" y={93 + i * 46} fontSize="9" fill={r.color} fontWeight="600">{r.status}</text>
-                  </g>
-                ))}
-                {/* Stats row */}
-                <rect x="20" y="216" width="130" height="60" rx="8" fill="white" stroke="#E2E8F0"/>
-                <text x="36" y="240" fontSize="10" fontWeight="700" fill="#1F2937">No-show rate</text>
-                <text x="36" y="264" fontSize="18" fontWeight="800" fill="#22c55e">8.4%</text>
-                <rect x="162" y="216" width="130" height="60" rx="8" fill="white" stroke="#E2E8F0"/>
-                <text x="178" y="240" fontSize="10" fontWeight="700" fill="#1F2937">Reminders today</text>
-                <text x="178" y="264" fontSize="18" fontWeight="800" fill="#1F6AE1">14</text>
-                <rect x="304" y="216" width="136" height="60" rx="8" fill="white" stroke="#E2E8F0"/>
-                <text x="318" y="240" fontSize="10" fontWeight="700" fill="#1F2937">Waitlist filled</text>
-                <text x="318" y="264" fontSize="18" fontWeight="800" fill="#f59e0b">3</text>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <nav className="breadcrumbs" aria-label="Breadcrumb">
-        <div className="container">
-          <Link href="/">Home</Link><span className="crumb-sep">›</span>
-          <span className="crumb-current">Appointment Booking &amp; Patient Reminders</span>
-        </div>
-      </nav>
-
-      <aside className="quick-answer container" style={{ maxWidth: '860px' }}>
-        <div className="quick-answer-inner">
-          <div className="quick-answer-label">Quick answer</div>
-          <p>
-            Clinexy's online booking and patient reminder system gives solo doctors a branded booking link, real-time calendar management, and a 3-touch automated reminder sequence via WhatsApp, SMS, and email. Most practices see their no-show rate drop from 25–35% to under 10% within 90 days.
-          </p>
-        </div>
-      </aside>
-
-      <section className="section">
-        <div className="container section-narrow">
-          <h2>The booking and reminder system for solo doctors</h2>
-          <p className="prose">
-            Most solo practices still rely on phone calls for booking and send one reminder at most. The result: a 25–35% no-show rate that nobody talks about but everyone experiences.
-          </p>
-          <p className="prose">
-            Clinexy changes this with two integrated systems: a 24/7 online booking link that patients can use at any time, and a 3-touch automated reminder sequence that starts the moment they book.
-          </p>
-          <ul className="point-list dark">
-            <li><strong>Branded booking link.</strong> On your website, WhatsApp bio, and Google Business Profile. Patients book in under 2 minutes, any time of day or night.</li>
-            <li><strong>3-touch reminder sequence.</strong> 24 hours before, 2 hours before, and 30 minutes before — via WhatsApp, SMS, or email. Each reminder includes a one-tap reschedule link.</li>
-            <li><strong>One-tap reschedule.</strong> When life intervenes, patients reschedule in 20 seconds. Your slot opens, another patient fills it.</li>
-            <li><strong>Waitlist management.</strong> When a slot opens from a cancellation, the next patient on the waitlist is automatically offered it.</li>
-            <li><strong>Calendar sync.</strong> Google Calendar and Outlook sync, so your personal and work calendars stay aligned.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="section" style={{ background: 'var(--gray-50)' }}>
-        <div className="container">
-          <h2>What changes in 90 days</h2>
-          <div className="stat-band" style={{ maxWidth: '700px' }}>
-            {[
-              { num: "<10%", label: "no-show rate, down from 25–35%" },
-              { num: "3-touch", label: "reminder sequence per patient" },
-              { num: "24/7", label: "bookings without phone calls" },
-              { num: "98%", label: "WhatsApp open rate" },
-            ].map((s, i) => (
-              <div key={i} className="stat good">
-                <div className="num">{s.num}</div>
-                <div className="label">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container section-narrow">
-          <h2>Frequently asked questions</h2>
-          <div className="faq-list">
-            {[
-              { q: "How do I set up online booking?", a: "30-minute guided setup. Connect your calendar, set your availability, and share your booking link. No technical knowledge required." },
-              { q: "Can patients cancel and reschedule online?", a: "Yes. One-tap reschedule with a link in every reminder. You can set notice requirements (e.g., 24-hour notice for cancellations)." },
-              { q: "What reminder channels are supported?", a: "WhatsApp, SMS, and email. You choose the default, and patients can specify their preference during booking." },
-              { q: "Does it work with my existing calendar?", a: "Yes. Two-way sync with Google Calendar and Outlook. Any blocked time in your personal calendar is automatically blocked in your booking calendar." },
-              { q: "How quickly do no-shows drop?", a: "Most practices see their no-show rate drop below 15% in the first 30 days and below 10% within 90 days." },
-            ].map((faq, i) => (
-              <details key={i} className="faq-item">
-                <summary>{faq.q}</summary>
-                <div className="faq-answer">{faq.a}</div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CTABanner
-        heading="Set up online booking in 30 minutes"
-        subtext="14-day free trial. No credit card. Start cutting no-shows today."
-        variant="inline"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd1) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd2) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd3) }}
+      />
+
+      <header className="hero"><div className="hero-inner">
+<div className="hero-content">
+<h1>Online Booking & Smart Reminders</h1>
+<p className="hero-sub">Online booking on your branded link with a 3-touch reminder sequence that cuts no-shows by 30 to 40%.</p><ul className="point-list hero-points"><li>Let patients book themselves, day or night.</li><li>Cut no-shows with automatic reminders.</li><li>Free your front desk from the phone.</li></ul>
+<div className="hero-ctas">
+<a className="btn btn-primary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Start Free Trial</a>
+<a className="btn btn-secondary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Book a Demo</a>
+</div>
+<p className="hero-reassure">14-day free trial · No credit card required · Setup in 30 minutes</p>
+</div>
+<div className="hero-image">
+<div className="hero-photo-wrap">
+<img className="hero-photo" src="/assets/img/booking.svg" alt="Online Booking & Smart Reminders" loading="eager" width="600" height="420" />
+<div className="hero-photo-badge">
+<div className="badge-dot"></div><span>Live booking system</span>
+</div></div>
+</div>
+</div></header>
+<nav className="breadcrumbs"><div className="container"><Link href="/">Home</Link><span className="crumb-sep">›</span><span className="crumb-current">Appointment Booking Patient Reminders For Solo Doctors</span></div></nav>
+<aside className="quick-answer container"><div className="quick-answer-inner"><div className="quick-answer-label">Quick answer</div><p>Online Booking & Smart Reminders from Clinexy is built specifically for solo healthcare professionals. It is included in the base subscription with no add-on fees and no per-appointment commissions. Setup takes minutes, not days, and works across regions with compliance for HIPAA, GDPR, PIPEDA, PDPA, and DPDP.</p></div></aside>
+<section className="section"><div className="container"><h2>What is Online Booking & Smart Reminders</h2><p className="lead">Online Booking & Smart Reminders is the part of Clinexy that handles this specific job for your practice.</p></div></section>
+<section className="section"><div className="container"><h2>Why it matters</h2><p className="lead">Solo practitioners juggle bookings, marketing, billing, records, and online reputation. Each of these usually requires a separate tool.</p></div></section>
+<section className="section"><div className="container"><h2>Problems without it</h2><p className="lead">Without this in place, solo practices typically lose 15 to 25% of operational time and miss recall opportunities.</p></div></section>
+<section className="section"><div className="container"><h2>How Clinexy solves it</h2><p className="lead">Clinexy ships Online Booking & Smart Reminders as part of the base subscription. No add-on fees. No setup work. Templates pre-configured for solo practice.</p></div></section>
+<section className="inline-cta"><div className="container"><h3>Ready to see this for your practice?</h3><div className="hero-ctas"><a className="btn btn-primary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Start Free Trial</a><a className="btn btn-secondary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Book a Demo</a></div></div></section>
+<section className="section"><div className="container"><h2>Workflow</h2><p className="lead">The patient interacts with your branded touchpoint. Clinexy handles the routine. Complex cases route to you with full context.</p></div></section>
+<section className="section"><div className="container"><h2>Benefits</h2><div className="cards-grid"><div className="card"><div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F6AE1" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10 L21 10"/><path d="M8 3 L8 7"/><path d="M16 3 L16 7"/></svg></div><h3>No add-on fees</h3><p>Included in the base subscription</p></div><div className="card"><div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F6AE1" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12c0 4.4-4 8-9 8-1.5 0-2.9-.3-4.1-.8L3 21l1.8-4.9C3.7 15 3 13.6 3 12c0-4.4 4-8 9-8s9 3.6 9 8z"/></svg></div><h3>Setup in minutes</h3><p>Pre-configured for solo practice</p></div><div className="card"><div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F6AE1" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9"/></svg></div><h3>Multi-channel</h3><p>SMS, WhatsApp, email</p></div><div className="card"><div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F6AE1" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Compliant in your region</h3><p>HIPAA, GDPR, PIPEDA, PDPA, DPDP</p></div><div className="card"><div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F6AE1" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12 L22 12"/></svg></div><h3>Specialty-aware</h3><p>Workflows adapt to your specialty</p></div><div className="card"><div className="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1F6AE1" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2 L20 6 V12 c0 5-3.5 9-8 10c-4.5-1-8-5-8-10V6Z"/></svg></div><h3>Real human support</h3><p>Not chatbots when you are stuck</p></div></div></div></section>
+<section className="section section-faq"><div className="container"><h2>Frequently asked questions</h2><div className="faq-list"><details className="faq-item"><summary>Is Online Booking & Smart Reminders included in the plan?</summary><div className="faq-answer">Yes. No add-on fees, no per-message fees.</div></details><details className="faq-item"><summary>How long does setup take?</summary><div className="faq-answer">Most features take 5 to 15 minutes to activate.</div></details><details className="faq-item"><summary>Does Online Booking & Smart Reminders work for my specialty?</summary><div className="faq-answer">Yes. Workflows adapt to your specialty's actual operating pattern.</div></details><details className="faq-item"><summary>Is it compliant in my region?</summary><div className="faq-answer">Yes. HIPAA, GDPR, PIPEDA, Privacy Act, PDPA, DPDP.</div></details><details className="faq-item"><summary>Can I customise it?</summary><div className="faq-answer">Yes. Timing, language, content, and templates are all customisable.</div></details><details className="faq-item"><summary>Can I integrate Online Booking & Smart Reminders with my existing tools?</summary><div className="faq-answer">Yes. Calendar sync, payment processors, and other major tools integrate natively.</div></details><details className="faq-item"><summary>Is patient data secure?</summary><div className="faq-answer">Yes. AES-256 encryption at rest. TLS 1.3 in transit.</div></details><details className="faq-item"><summary>What if I need help setting it up?</summary><div className="faq-answer">24/7 chat support during your trial and on every paid plan.</div></details></div></div></section>
+<section className="section section-related"><div className="container"><h2>Related pages</h2><div className="related-grid"><Link className="related-card" href="/features/appointments-reminders"><h4>Online Booking & Smart Reminders</h4><p>Online booking on your branded link with a 3-touch reminder sequence that cuts no-shows by 30 to 40%. Built for solo hea</p><span className="related-arrow">→</span></Link><Link className="related-card" href="/features/teleconsultation-prescriptions"><h4>Telehealth & Digital Prescriptions</h4><p>Video consults via Google Meet. Branded prescriptions generated in minutes. Compliant in your region. Built for solo hea</p><span className="related-arrow">→</span></Link><Link className="related-card" href="/features/telehealth"><h4>Telehealth for Solo Practitioners</h4><p>Telehealth that just works. Google Meet inside Clinexy. Patient gets a join link. You see vitals and notes from inside t</p><span className="related-arrow">→</span></Link></div></div></section>
+<section className="section section-cta"><div className="container">
+<h2>Ready to grow your practice?</h2>
+<p>Join solo healthcare professionals using Clinexy to run a calmer, better-grown practice.</p>
+<div className="hero-ctas">
+<a className="btn btn-primary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Start Free Trial</a>
+<a className="btn btn-ghost-light btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Book a Demo</a>
+</div></div></section>
     </>
   );
 }

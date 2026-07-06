@@ -3,9 +3,9 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Why Clinexy: Practice Operations & Growth | Clinexy",
+  title: "Why Clinexy: One Platform to Run and Grow",
   description:
-    "Why solo practitioners choose Clinexy: operations and growth in one plan, absolute patient ownership, and honest pricing with no commissions.",
+    "Why solo practitioners choose Clinexy: operations and growth in one platform, a website, local SEO, reviews, and branding included, with honest pricing and no commissions.",
   alternates: { canonical: "https://www.clinexy.com/why-clinexy" },
 };
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Solutions by Specialty for Solo Practitioners | Clinexy",
+  title: "Solutions by Specialty for Solo Practitioners",
   description:
     "Clinexy is tailored to your specialty, from doctors and dentists to therapists, physios, and wellness practitioners. See how the platform fits the way you work.",
   alternates: { canonical: "https://www.clinexy.com/solutions" },

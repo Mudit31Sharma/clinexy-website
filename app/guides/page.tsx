@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Guides for Solo Doctors: SEO, Reviews, No-Shows | Clinexy",
+  title: "Guides for Solo Doctors: SEO, Reviews, No-Shows",
   description:
     "Free, step-by-step guides for solo practices: local SEO, getting Google reviews, reducing no-shows, personal branding, and launching a private practice.",
   alternates: { canonical: "https://www.clinexy.com/guides" },

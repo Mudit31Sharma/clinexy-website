@@ -1,44 +1,174 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Clinexy",
-  description: "Clinexy privacy policy. How we collect, use, and protect your data.",
+  title: "Privacy Policy",
+  description: "How Clinexy collects, stores, and protects data.",
   alternates: { canonical: "https://www.clinexy.com/privacy" },
 };
 
-export default function PrivacyPage() {
+// JSON-LD Structured Data
+const jsonLd1 = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Clinexy",
+  "url": "https://www.clinexy.com/",
+  "logo": "https://www.clinexy.com/assets/img/logo.svg",
+  "description": "All-in-one patient growth and practice management platform for solo healthcare professionals.",
+  "sameAs": [
+    "https://www.linkedin.com/company/clinexy/",
+    "https://www.facebook.com/clinexyapp"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91 94126 25716",
+      "email": "sales@clinexy.com",
+      "contactType": "customer support"
+    }
+  ]
+};
+
+const jsonLd2 = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.clinexy.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Privacy",
+      "item": "https://www.clinexy.com/privacy"
+    }
+  ]
+};
+
+const jsonLd3 = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where can I learn more?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Email sales@clinexy.com."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this content free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where else can I find help?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our Resources hub at /resources/for-doctors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I download templates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there 24/7 support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes for paying customers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I contact sales?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "sales@clinexy.com."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I request a feature?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use in-app feedback or email product@clinexy.com."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where's the status page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "status.clinexy.com."
+      }
+    }
+  ]
+};
+
+
+export default function Page() {
   return (
     <>
-      <header style={{ background: 'var(--gray-50)', padding: '56px 0 32px', borderBottom: '1px solid var(--border)' }}>
-        <div className="container section-narrow">
-          <nav className="breadcrumbs" style={{ border: 'none', padding: '0 0 16px' }} aria-label="Breadcrumb">
-            <Link href="/">Home</Link><span className="crumb-sep">›</span>
-            <span className="crumb-current">Privacy Policy</span>
-          </nav>
-          <h1>Privacy Policy</h1>
-          <p style={{ color: 'var(--gray-500)', fontSize: '13.5px' }}>Last updated: June 2026</p>
-        </div>
-      </header>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd1) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd2) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd3) }}
+      />
 
-      <section className="section">
-        <div className="container section-narrow">
-          {[
-            { heading: "Who we are", body: "Clinexy is a practice management and patient growth platform for solo healthcare professionals. Our registered address is available on request at hello@clinexy.com." },
-            { heading: "What data we collect", body: "We collect: account information (name, email, phone), practice information (specialty, location, services), patient data you enter (only accessible by you), usage data (how you use the platform), and payment information (processed by our payment providers — we do not store card details)." },
-            { heading: "How we use your data", body: "We use your data to provide the platform services, send transactional communications (confirmations, invoices), improve the product, and comply with legal requirements. We do not sell your data to third parties." },
-            { heading: "Patient data", body: "Patient data belongs to you and your patients. We process it only as your data processor, in accordance with your instructions and applicable law (HIPAA, GDPR, DPDP, etc.). We do not access patient data for our own purposes." },
-            { heading: "Data retention", body: "We retain your data for as long as your account is active. On cancellation, your data is retained for 30 days (exportable), then deleted. Patient data is handled per your jurisdiction's healthcare data retention requirements." },
-            { heading: "Your rights", body: "You have the right to access, correct, export, and delete your data. Email hello@clinexy.com for any data requests. We respond within 5 business days." },
-            { heading: "Contact", body: "For privacy enquiries: privacy@clinexy.com" },
-          ].map((s, i) => (
-            <div key={i} style={{ marginBottom: '36px' }}>
-              <h2 style={{ fontSize: '1.1rem' }}>{s.heading}</h2>
-              <p className="prose">{s.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <header className="hero"><div className="hero-inner">
+<div className="hero-content">
+<h1>Privacy Policy</h1>
+<p className="hero-sub">How we collect, store, and protect your data.</p><ul className="point-list hero-points"><li>Keep patient data private and protected.</li><li>Meet HIPAA, GDPR, and DPDP standards.</li><li>Build trust your patients can see.</li></ul>
+<div className="hero-ctas">
+<a className="btn btn-primary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Start Free Trial</a>
+<a className="btn btn-secondary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Book a Demo</a>
+</div>
+<p className="hero-reassure">14-day free trial · No credit card required · Setup in 30 minutes</p>
+</div>
+<div className="hero-image">
+<div className="hero-photo-wrap">
+<img className="hero-photo" src="/assets/img/security.svg" alt="Privacy Policy" loading="eager" width="600" height="420" />
+<div className="hero-photo-badge">
+<div className="badge-dot"></div><span>Live booking system</span>
+</div></div>
+</div>
+</div></header>
+<nav className="breadcrumbs"><div className="container"><Link href="/">Home</Link><span className="crumb-sep">›</span><span className="crumb-current">Privacy</span></div></nav>
+<aside className="quick-answer container"><div className="quick-answer-inner"><div className="quick-answer-label">Quick answer</div><p>Privacy Policy for solo healthcare professionals. Clear, complete, and built to be useful within 60 seconds of reading.</p></div></aside>
+<section className="section"><div className="container"><h2>What you'll find here</h2><p className="lead">Practical information designed for solo doctors. Read or skim. No fluff.</p></div></section>
+<section className="section"><div className="container"><h2>Need more?</h2><p className="lead">Reach out at sales@clinexy.com. We respond within one business day.</p></div></section>
+<section className="inline-cta"><div className="container"><h3>Ready to see this for your practice?</h3><div className="hero-ctas"><a className="btn btn-primary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Start Free Trial</a><a className="btn btn-secondary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Book a Demo</a></div></div></section>
+<section className="section section-faq"><div className="container"><h2>Frequently asked questions</h2><div className="faq-list"><details className="faq-item"><summary>Where can I learn more?</summary><div className="faq-answer">Email sales@clinexy.com.</div></details><details className="faq-item"><summary>Is this content free?</summary><div className="faq-answer">Yes.</div></details><details className="faq-item"><summary>Where else can I find help?</summary><div className="faq-answer">Our Resources hub at /resources/for-doctors.</div></details><details className="faq-item"><summary>Can I download templates?</summary><div className="faq-answer">Yes.</div></details><details className="faq-item"><summary>Is there 24/7 support?</summary><div className="faq-answer">Yes for paying customers.</div></details><details className="faq-item"><summary>How do I contact sales?</summary><div className="faq-answer">sales@clinexy.com.</div></details><details className="faq-item"><summary>How do I request a feature?</summary><div className="faq-answer">Use in-app feedback or email product@clinexy.com.</div></details><details className="faq-item"><summary>Where's the status page?</summary><div className="faq-answer">status.clinexy.com.</div></details></div></div></section>
+<section className="section section-related"><div className="container"><h2>Related pages</h2><div className="related-grid"><Link className="related-card" href="/terms"><h4>Terms of Service</h4><p>Clinexy terms of service.</p><span className="related-arrow">→</span></Link><Link className="related-card" href="/why-clinexy"><h4>Why Clinexy</h4><p>Built for solo doctors. Not enterprise software, not basic booking. Calm and made for the way you work.</p><span className="related-arrow">→</span></Link><Link className="related-card" href="/about"><h4>About Clinexy</h4><p>We help solo doctors run a practice that runs smoothly. Calm and simple.</p><span className="related-arrow">→</span></Link></div></div></section>
+<section className="section section-cta"><div className="container">
+<h2>Ready to grow your practice?</h2>
+<p>Join solo healthcare professionals using Clinexy to run a calmer, better-grown practice.</p>
+<div className="hero-ctas">
+<a className="btn btn-primary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Start Free Trial</a>
+<a className="btn btn-ghost-light btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Book a Demo</a>
+</div></div></section>
     </>
   );
 }

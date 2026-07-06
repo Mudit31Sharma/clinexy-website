@@ -3,9 +3,9 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "Clinexy terms of service.",
-  alternates: { canonical: "https://www.clinexy.com/terms" },
+  title: "Free Trial - Clinic Software for Solo Doctors",
+  description: "Try Clinexy free for 14 days. No credit card. Setup in 30 minutes.",
+  alternates: { canonical: "https://www.clinexy.com/free-trial" },
 };
 
 // JSON-LD Structured Data
@@ -43,8 +43,8 @@ const jsonLd2 = {
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Terms",
-      "item": "https://www.clinexy.com/terms"
+      "name": "Free Trial",
+      "item": "https://www.clinexy.com/free-trial"
     }
   ]
 };
@@ -139,8 +139,8 @@ export default function Page() {
 
       <header className="hero"><div className="hero-inner">
 <div className="hero-content">
-<h1>Terms of Service</h1>
-<p className="hero-sub">The agreement between Clinexy and our customers.</p><ul className="point-list hero-points"><li>Get found by patients searching for your specialty.</li><li>Fill your calendar and cut no-shows automatically.</li><li>Run bookings, branding, and reviews from one place.</li></ul>
+<h1>Start your free trial</h1>
+<p className="hero-sub">14 days. Full product. No credit card.</p><ul className="point-list hero-points"><li>Get found by patients searching for your specialty.</li><li>Fill your calendar and cut no-shows automatically.</li><li>Run bookings, branding, and reviews from one place.</li></ul>
 <div className="hero-ctas">
 <a className="btn btn-primary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Start Free Trial</a>
 <a className="btn btn-secondary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Book a Demo</a>
@@ -149,19 +149,19 @@ export default function Page() {
 </div>
 <div className="hero-image">
 <div className="hero-photo-wrap">
-<img className="hero-photo" src="/assets/img/growth.svg" alt="Terms of Service" loading="eager" width="600" height="420" />
+<img className="hero-photo" src="/assets/img/growth.svg" alt="Start your free trial" loading="eager" width="600" height="420" />
 <div className="hero-photo-badge">
 <div className="badge-dot"></div><span>Live booking system</span>
 </div></div>
 </div>
 </div></header>
-<nav className="breadcrumbs"><div className="container"><Link href="/">Home</Link><span className="crumb-sep">›</span><span className="crumb-current">Terms</span></div></nav>
-<aside className="quick-answer container"><div className="quick-answer-inner"><div className="quick-answer-label">Quick answer</div><p>Terms of Service for solo healthcare professionals. Clear, complete, and built to be useful within 60 seconds of reading.</p></div></aside>
+<nav className="breadcrumbs"><div className="container"><Link href="/">Home</Link><span className="crumb-sep">›</span><span className="crumb-current">Free Trial</span></div></nav>
+<aside className="quick-answer container"><div className="quick-answer-inner"><div className="quick-answer-label">Quick answer</div><p>Start your free trial for solo healthcare professionals. Clear, complete, and built to be useful within 60 seconds of reading.</p></div></aside>
 <section className="section"><div className="container"><h2>What you'll find here</h2><p className="lead">Practical information designed for solo doctors. Read or skim. No fluff.</p></div></section>
 <section className="section"><div className="container"><h2>Need more?</h2><p className="lead">Reach out at sales@clinexy.com. We respond within one business day.</p></div></section>
 <section className="inline-cta"><div className="container"><h3>Ready to see this for your practice?</h3><div className="hero-ctas"><a className="btn btn-primary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Start Free Trial</a><a className="btn btn-secondary btn-lg" href="https://demo.clinexy.com/portal/onboarding-request">Book a Demo</a></div></div></section>
 <section className="section section-faq"><div className="container"><h2>Frequently asked questions</h2><div className="faq-list"><details className="faq-item"><summary>Where can I learn more?</summary><div className="faq-answer">Email sales@clinexy.com.</div></details><details className="faq-item"><summary>Is this content free?</summary><div className="faq-answer">Yes.</div></details><details className="faq-item"><summary>Where else can I find help?</summary><div className="faq-answer">Our Resources hub at /resources/for-doctors.</div></details><details className="faq-item"><summary>Can I download templates?</summary><div className="faq-answer">Yes.</div></details><details className="faq-item"><summary>Is there 24/7 support?</summary><div className="faq-answer">Yes for paying customers.</div></details><details className="faq-item"><summary>How do I contact sales?</summary><div className="faq-answer">sales@clinexy.com.</div></details><details className="faq-item"><summary>How do I request a feature?</summary><div className="faq-answer">Use in-app feedback or email product@clinexy.com.</div></details><details className="faq-item"><summary>Where's the status page?</summary><div className="faq-answer">status.clinexy.com.</div></details></div></div></section>
-<section className="section section-related"><div className="container"><h2>Related pages</h2><div className="related-grid"><Link className="related-card" href="/privacy"><h4>Privacy Policy</h4><p>How Clinexy collects, stores, and protects data.</p><span className="related-arrow">→</span></Link><Link className="related-card" href="/why-clinexy"><h4>Why Clinexy</h4><p>Built for solo doctors. Not enterprise software, not basic booking. Calm and made for the way you work.</p><span className="related-arrow">→</span></Link><Link className="related-card" href="/about"><h4>About Clinexy</h4><p>We help solo doctors run a practice that runs smoothly. Calm and simple.</p><span className="related-arrow">→</span></Link></div></div></section>
+<section className="section section-related"><div className="container"><h2>Related pages</h2><div className="related-grid"><Link className="related-card" href="/why-clinexy"><h4>Why Clinexy</h4><p>Built for solo doctors. Not enterprise software, not basic booking. Calm and made for the way you work.</p><span className="related-arrow">→</span></Link><Link className="related-card" href="/about"><h4>About Clinexy</h4><p>We help solo doctors run a practice that runs smoothly. Calm and simple.</p><span className="related-arrow">→</span></Link><Link className="related-card" href="/contact"><h4>Talk to us</h4><p>Talk to our team. Sales, support, partnerships, press.</p><span className="related-arrow">→</span></Link></div></div></section>
 <section className="section section-cta"><div className="container">
 <h2>Ready to grow your practice?</h2>
 <p>Join solo healthcare professionals using Clinexy to run a calmer, better-grown practice.</p>

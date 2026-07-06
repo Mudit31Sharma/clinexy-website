@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Research & Benchmarks for Solo Practices | Clinexy",
+  title: "Research & Benchmarks for Solo Practices",
   description:
     "Data-backed reports for solo practices: 2026 no-show research and patient acquisition benchmarks, with what the numbers mean for your practice.",
   alternates: { canonical: "https://www.clinexy.com/reports" },

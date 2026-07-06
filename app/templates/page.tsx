@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Free Templates for Solo Practices | Clinexy",
+  title: "Free Templates for Solo Practices",
   description:
     "Free, copy-and-use templates for solo practices: patient recall messages, Google review requests, intake forms, and treatment plans, with tips to customise.",
   alternates: { canonical: "https://www.clinexy.com/templates" },

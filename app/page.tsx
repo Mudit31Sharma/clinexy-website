@@ -153,8 +153,11 @@ const faqs = [
   { q: "How does Clinexy reduce no-shows?", a: "A 3-touch reminder sequence with one-tap reschedule. SMS, WhatsApp, or email. Practices see no-shows drop from 25–35% to under 10% within 90 days." },
   { q: "Does Clinexy include a website builder?", a: "Yes. Healthcare-specific templates, schema markup, online booking embedded, mobile speed 90+. Setup in 30 minutes." },
   { q: "Is Clinexy HIPAA-compliant?", a: "HIPAA-aligned workflows globally. BAA on Done-For-You tier. Also GDPR, PIPEDA, Privacy Act, PDPA, DPDP." },
-  { q: "How much does Clinexy cost?", a: "₹999 per month in India, $99 per month globally. No commissions. No add-ons. Cancel anytime." },
+  { q: "How much does Clinexy cost?", a: "₹999 per month in India, $99 per month globally. Optional 499 dollar Done-For-You tier. No commissions. No add-ons. Cancel anytime." },
   { q: "How long does setup take?", a: "30 minutes for core setup. 2 hours including branded website." },
+  { q: "Can I import my existing patient list?", a: "Yes. CSV import in 10 minutes. Guided migration from Practo, SimplePractice, Cliniko, Jane, MocDoc included." },
+  { q: "Can I cancel anytime?", a: "Yes. No contracts. Data exportable for 30 days after cancellation. Free 14-day trial requires no credit card." },
+  { q: "What support is included?", a: "24/7 chat support. Email under 1 business day. Done-For-You customers get a dedicated growth manager." }
 ];
 
 export default function HomePage() {

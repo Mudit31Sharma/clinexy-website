@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Pricing: One Simple Plan for Solo Practices | Clinexy",
+  title: "Pricing: One Simple Plan for Solo Practices",
   description:
     "Simple, honest pricing for solo healthcare professionals: 999 rupees or 99 dollars a month for everything, with no commissions. Optional Done-For-You tier. Free trial.",
   alternates: { canonical: "https://www.clinexy.com/pricing" },
