@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 
 const Logo = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 36" width="120" height="32" aria-label="Clinexy">
@@ -200,6 +201,14 @@ export default function Navbar() {
   const [openMenu, setOpenMenu] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 8);
@@ -221,7 +230,7 @@ export default function Navbar() {
   return (
     <nav ref={navRef} className={`topnav${scrolled ? ' scrolled' : ''}`} role="navigation" aria-label="Main navigation">
       <div className="nav-inner">
-        <Link href="/" className="logo" aria-label="Clinexy home">
+        <Link href="/" className="logo" aria-label="Clinexy home" onClick={handleLogoClick}>
           <Logo />
         </Link>
 
