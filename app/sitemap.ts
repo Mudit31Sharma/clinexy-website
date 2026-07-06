@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.clinexy.com";
-  const lastmod = new Date("2026-06-20");
+  const lastmod = "2026-06-20";
 
   const coreRoutes = [
     "",
@@ -163,12 +163,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const entries = [
-    ...coreRoutes.map((route) => ({
-      url: `${baseUrl}${route}`,
-      lastModified: lastmod,
-      changeFrequency: "weekly" as const,
-      priority: route === "" ? 1.0 : 0.8,
-    })),
+    ...coreRoutes.map((route) => {
+      let priority = 0.8;
+      if (route === "") {
+        priority = 1.0;
+      } else if (
+        [
+          "/compliance/abdm",
+          "/pricing/solo-doctors",
+          "/pricing/solo-doctors/global",
+          "/pricing/solo-doctors/india",
+        ].includes(route)
+      ) {
+        priority = 0.7;
+      }
+      return {
+        url: `${baseUrl}${route}`,
+        lastModified: lastmod,
+        changeFrequency: "weekly" as const,
+        priority,
+      };
+    }),
     ...blogSlugs.map((slug) => ({
       url: `${baseUrl}/blog/${slug}`,
       lastModified: lastmod,
