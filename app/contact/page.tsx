@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTABanner from "@/components/CTABanner";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Clinexy | Sales, Support & Demos",
@@ -217,6 +218,13 @@ export default function ContactPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="section" style={{ background: "#f8fafc" }}>
+        <div className="container" style={{ maxWidth: 760 }}>
+          <ContactForm />
         </div>
       </section>
 
