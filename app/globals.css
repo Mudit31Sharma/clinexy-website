@@ -415,6 +415,17 @@ a:hover { color: var(--blue-700); }
 
 .quick-answer p { color: var(--gray-700); font-size: 14.5px; margin: 0; }
 
+/* ─── Contact methods grid ───────────────────────────────────────────── */
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 28px;
+}
+
+/* ─── Nav mobile CTA (hidden on desktop, shown inside mobile drawer) ── */
+.nav-mobile-cta { display: none; }
+
 /* ─── Cards ──────────────────────────────────────────────────────────── */
 .cards-grid {
   display: grid;
@@ -882,11 +893,22 @@ a:hover { color: var(--blue-700); }
 }
 
 /* ─── Responsive ─────────────────────────────────────────────────────── */
+
+/* ── 1024px: Tablet landscape ─────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .footer-cols { grid-template-columns: repeat(4, 1fr); }
-  .footer-top { grid-template-columns: 1fr; }
+  .footer-top {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px 48px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .mega-panel { min-width: 460px; }
 }
 
+/* ── 900px: Tablet portrait ───────────────────────────────────────────── */
 @media (max-width: 900px) {
   .split-grid { grid-template-columns: 1fr; gap: 36px; }
   .split-grid.media-left { direction: ltr; }
@@ -894,32 +916,175 @@ a:hover { color: var(--blue-700); }
   .hero-image { display: none; }
 }
 
+/* ── 768px: Large phone / tablet ─────────────────────────────────────── */
 @media (max-width: 768px) {
+  /* --- Navbar --- */
   .nav-list, .nav-cta { display: none; }
-  .nav-list.open { 
-    display: flex; flex-direction: column; 
-    position: fixed; top: var(--nav-h); left: 0; right: 0;
-    background: white; padding: 16px; 
-    border-bottom: 1px solid var(--border);
+  .nav-list.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    background: white;
+    padding: 12px 16px 24px;
+    border-top: 1px solid var(--border);
     box-shadow: var(--shadow);
     gap: 2px;
     z-index: 999;
   }
   .nav-toggle { display: flex; }
-  .mega-panel { position: static; box-shadow: none; border: none; border-radius: 0; min-width: unset; flex-direction: column; padding: 8px 12px; background: var(--gray-50); }
+  .mega-panel {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    min-width: unset;
+    flex-direction: column;
+    padding: 6px 12px 6px 16px;
+    background: var(--gray-50);
+    border-radius: 8px;
+    margin-top: 4px;
+    gap: 12px;
+  }
   .mega-panel.open { display: flex; }
-  .footer-cols { grid-template-columns: repeat(2, 1fr); }
-  .cta-banner { margin: 0; border-radius: 0; padding: 40px 24px; }
+  .mega-group h4 { margin-bottom: 6px; }
+
+  /* Mobile CTA buttons in drawer */
+  .nav-mobile-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 0 0;
+    margin-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* --- Layout --- */
+  .section { padding: 52px 0; }
+  .section-sm { padding: 36px 0; }
+  .container { padding: 0 20px; }
+
+  /* --- Hero --- */
+  .hero { padding: 52px 0 44px; }
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-ctas .btn { text-align: center; justify-content: center; }
+  .hero-sub { font-size: 15px; }
+
+  /* --- Quick answer --- */
+  .quick-answer-inner { flex-direction: column; gap: 10px; }
+  .quick-answer-label {
+    border-right: none;
+    border-bottom: 2px solid var(--blue-100);
+    padding-right: 0;
+    padding-bottom: 10px;
+    min-width: unset;
+  }
+
+  /* --- Contact methods --- */
+  .contact-methods {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* --- Cards / grids --- */
   .cards-grid { grid-template-columns: 1fr; }
   .two-col { columns: 1; }
   .stat-band { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .resource-grid { grid-template-columns: 1fr; }
+
+  /* --- CTA Banner --- */
+  .cta-banner { margin: 0; border-radius: 0; padding: 44px 24px; }
+  .cta-banner .hero-ctas { flex-direction: column; align-items: center; }
+
+  /* --- Compare table --- */
+  .compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* --- Footer --- */
+  .footer-top {
+    padding: 0 20px 40px;
+    gap: 28px;
+  }
+  .footer-cols { grid-template-columns: repeat(2, 1fr); }
+  .footer-bar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 20px;
+  }
+  .footer-bar-links { justify-content: center; }
+
+  /* --- Steps --- */
+  .steps { grid-template-columns: 1fr; }
+
+  /* --- Testimonial --- */
+  .testimonial { padding: 22px 20px; }
+  .testimonial blockquote { font-size: 16px; }
+
+  /* --- Download block --- */
+  .download-block { flex-direction: column; padding: 22px 20px; }
 }
 
+/* ── 480px: Standard phone ────────────────────────────────────────────── */
 @media (max-width: 480px) {
-  .footer-cols { grid-template-columns: repeat(2, 1fr); }
-  .hero { padding: 52px 0 48px; }
+  /* --- Layout --- */
+  .section { padding: 40px 0; }
+  .section-sm { padding: 28px 0; }
+  .container { padding: 0 16px; }
+
+  /* --- Hero --- */
+  .hero { padding: 40px 0 36px; }
+  .hero-sub { font-size: 14.5px; }
+  .hero-reassure { font-size: 12px; }
+  .hero-points li { font-size: 14px; }
+
+  /* --- Typography scale --- */
+  .lead { font-size: 15px; }
+
+  /* --- Stat band --- */
+  .stat-band { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .stat .num { font-size: 1.9rem; }
+
+  /* --- Footer --- */
+  .footer-cols { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .footer-top { padding: 0 16px 32px; }
+
+  /* --- CTA banner --- */
+  .cta-banner { padding: 36px 16px; }
+
+  /* --- Pricing --- */
   .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card { padding: 28px 22px; }
+
+  /* --- Buttons --- */
+  .btn-lg { padding: 11px 20px; font-size: 14px; }
+
+  /* --- FAQ --- */
+  .faq-item summary { font-size: 14px; }
+
+  /* --- Steps --- */
+  .step { padding: 20px 18px 20px 64px; }
+  .step::before { left: 16px; top: 20px; width: 32px; height: 32px; font-size: 14px; }
 }
+
+/* ── 360px: Compact phones (small Android) ───────────────────────────── */
+@media (max-width: 360px) {
+  .container { padding: 0 12px; }
+  .hero { padding: 32px 0 28px; }
+  .btn-lg { padding: 10px 16px; font-size: 13.5px; }
+  .stat-band { grid-template-columns: 1fr; }
+  .cta-banner { padding: 28px 12px; }
+  .footer-cols { grid-template-columns: 1fr; }
+  .nav-inner { padding: 0 14px; }
+}
+
+
 
 /* ─── Added Netlify Restored Component Styles ───────────────────────── */
 .testimonial {

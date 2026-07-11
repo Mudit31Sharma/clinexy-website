@@ -298,6 +298,24 @@ export default function Navbar() {
               Blog
             </Link>
           </li>
+
+          {/* Mobile-only CTA buttons inside the drawer */}
+          <li role="none" className="nav-mobile-cta">
+            <a
+              href="https://demo.clinexy.com/portal/onboarding-request"
+              className="btn btn-ghost btn-sm"
+              style={{ width: '100%', justifyContent: 'center' }}
+            >
+              Book a Demo
+            </a>
+            <a
+              href="https://demo.clinexy.com/portal/onboarding-request"
+              className="btn btn-primary btn-sm"
+              style={{ width: '100%', justifyContent: 'center' }}
+            >
+              Start Free Trial
+            </a>
+          </li>
         </ul>
 
         <div className="nav-cta">

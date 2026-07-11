@@ -15,7 +15,7 @@ const Logo = () => (
 export default function Footer() {
   return (
     <footer className="site-footer" role="contentinfo">
-      <div className="footer-top" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px 48px', display: 'grid', gridTemplateColumns: '240px 1fr', gap: '48px' }}>
+      <div className="footer-top">
         <div className="footer-brand">
           <div className="footer-logo">
             <Logo />
