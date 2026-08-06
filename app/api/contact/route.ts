@@ -42,6 +42,7 @@ export async function POST(request: NextRequest) {
     const gmailUser = process.env.GMAIL_USER;
     const gmailPass = process.env.GMAIL_APP_PASSWORD;
     const receiverMail = process.env.CONTACT_RECEIVER;
+    const ccMail = process.env.CONTACT_CC;
 
     if (!gmailUser || !gmailPass || !receiverMail) {
       console.error("Missing SMTP env vars");
@@ -105,6 +106,7 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail({
       from: `"Clinexy Contact Form" <${gmailUser}>`,
       to: receiverMail,
+      ...(ccMail ? { cc: ccMail } : {}),
       replyTo: email,
       subject: `[Clinexy Contact] ${subject}`,
       html: htmlBody,
