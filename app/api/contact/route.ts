@@ -53,10 +53,22 @@ export async function POST(request: NextRequest) {
     }
 
     // ── nodemailer transporter ─────────────────────────────────────────────────
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: { user: gmailUser, pass: gmailPass },
-    });
+    // Support Hostinger / Custom SMTP as well as Gmail
+    const customHost = process.env.SMTP_HOST || (!gmailUser.endsWith("@gmail.com") ? "smtp.hostinger.com" : undefined);
+    const customPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 465;
+    const customSecure = process.env.SMTP_SECURE ? process.env.SMTP_SECURE === "true" : customPort === 465;
+
+    const transporter = customHost
+      ? nodemailer.createTransport({
+          host: customHost,
+          port: customPort,
+          secure: customSecure,
+          auth: { user: gmailUser, pass: gmailPass },
+        })
+      : nodemailer.createTransport({
+          service: "gmail",
+          auth: { user: gmailUser, pass: gmailPass },
+        });
 
     // ── build HTML email ───────────────────────────────────────────────────────
     const htmlBody = `

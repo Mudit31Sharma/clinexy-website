@@ -100,8 +100,13 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Something went wrong.");
+      const contentType = res.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "Something went wrong.");
+      } else {
+        if (!res.ok) throw new Error(`Server error (${res.status}). Please restart dev server and try again.`);
+      }
       setState("success");
       setForm({ name: "", email: "", phone: "", subject: "", message: "" });
       setTouched({});
